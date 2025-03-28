@@ -1,0 +1,46 @@
+nomes = []
+
+def adicionar_nome():
+    nome = input("Digite o remédio a ser adicionado: ")
+    nomes.append(nome)
+    print(f'O remédio "{nome}" foi adicionado.')
+
+def remover_nome():
+    nome = input("Digite o remédio a ser removido: ")
+    if nome in nomes:
+        nomes.remove(nome)
+        print(f'O remédio "{nome}" foi removido.')
+    else:
+        print(f'O remédio "{nome}" não foi encontrado na lista.')
+
+def apresentar_lista():
+    if nomes:
+        print("\nLista de remédio:")
+        for nome in nomes:
+            print(nome)
+    else:
+        print("A lista está vazia.")
+
+def menu():
+    while True:
+        print("\nEscolha uma opção:")
+        print("1 - Adicionar um remédio")
+        print("2 - Remover um remédio")
+        print("3 - Apresentar a lista")
+        print("4 - Encerrar")
+
+        opcao = input("Digite o número da opção desejada: ")
+
+        if opcao == "1":
+            adicionar_nome()
+        elif opcao == "2":
+            remover_nome()
+        elif opcao == "3":
+            apresentar_lista()
+        elif opcao == "4":
+            print("Encerrando o programa...")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+menu()
